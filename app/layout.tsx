@@ -22,14 +22,10 @@ const caveat = Caveat({
 })
 
 export const metadata: Metadata = {
-  title: 'Fastu Nadya — Web Developer & Cybersecurity Enthusiast',
+  title: 'Fastu Nadya | Fradyva',
   description:
     'Portfolio of Fastu Nadya Progresiva, an Informatics student at Universitas Amikom Yogyakarta focused on web development, cybersecurity, and creative technology.',
   generator: 'v0.app',
-  icons: {
-    icon: '/images/favicon.png',
-    apple: '/images/favicon.png',
-  },
 }
 
 export const viewport: Viewport = {
