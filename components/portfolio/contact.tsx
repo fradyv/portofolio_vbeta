@@ -90,7 +90,7 @@ export function Contact() {
         {/* Column 2 — Connect with Us */}
         <div className="lg:text-right">
           <p className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            Connect with Us
+            Connect with Me
           </p>
           <div className="flex items-center gap-5 lg:justify-end">
             {SOCIAL_LINKS.map((link) => (
