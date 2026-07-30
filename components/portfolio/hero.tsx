@@ -14,7 +14,7 @@ const EXPLORING = [
   {
     icon: GraduationCap,
     header: "Education",
-    subtitle: "Informatics Student at Universitas Amikom Yogyakarta",
+    subtitle: "Informatics Student at Amikom University of Yogyakarta",
   },
 ]
 

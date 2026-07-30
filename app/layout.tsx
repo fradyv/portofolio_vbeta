@@ -24,7 +24,7 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: 'Fastu Nadya | Fradyva',
   description:
-    'Portfolio of Fastu Nadya Progresiva, an Informatics student at Universitas Amikom Yogyakarta focused on web development, cybersecurity, and creative technology.',
+    'Portfolio of Fastu Nadya Progresiva, an Informatics student at Amikom University of Yogyakarta focused on web development, cybersecurity, and creative technology.',
   generator: 'v0.app',
 }
 
