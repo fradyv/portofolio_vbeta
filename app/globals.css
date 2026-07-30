@@ -1,0 +1,249 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-brand: var(--font-caveat), cursive;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --background: #f4f6f3;
+  --foreground: #1a2019;
+  --card: #ffffff;
+  --card-foreground: #1a2019;
+  --popover: #ffffff;
+  --popover-foreground: #1a2019;
+  --primary: #3a5035;
+  --primary-foreground: #f4f6f3;
+  --secondary: #e6ebe2;
+  --secondary-foreground: #1a2019;
+  --muted: #eaeee6;
+  --muted-foreground: #5a6558;
+  --accent: #dfe7d9;
+  --accent-foreground: #2b3a27;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #d6ddce;
+  --input: #d6ddce;
+  --ring: #3a5035;
+  --chart-1: #3a5035;
+  --chart-2: #5b7b55;
+  --chart-3: #6e9367;
+  --chart-4: #8fae87;
+  --chart-5: #b3c7ac;
+  --radius: 0.625rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a2019;
+  --sidebar-primary: #3a5035;
+  --sidebar-primary-foreground: #f4f6f3;
+  --sidebar-accent: #dfe7d9;
+  --sidebar-accent-foreground: #2b3a27;
+  --sidebar-border: #d6ddce;
+  --sidebar-ring: #3a5035;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0e110f;
+  --foreground: #f0f4f1;
+  --card: #161c18;
+  --card-foreground: #f0f4f1;
+  --popover: #161c18;
+  --popover-foreground: #f0f4f1;
+  --primary: #6e9367;
+  --primary-foreground: #0e110f;
+  --secondary: #1c231d;
+  --secondary-foreground: #f0f4f1;
+  --muted: #1c231d;
+  --muted-foreground: #a3b19b;
+  --accent: #222c23;
+  --accent-foreground: #f0f4f1;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #262f27;
+  --input: #2b352c;
+  --ring: #6e9367;
+  --chart-1: #6e9367;
+  --chart-2: #5b7b55;
+  --chart-3: #8fae87;
+  --chart-4: #4a6444;
+  --chart-5: #b3c7ac;
+  --sidebar: #161c18;
+  --sidebar-foreground: #f0f4f1;
+  --sidebar-primary: #6e9367;
+  --sidebar-primary-foreground: #0e110f;
+  --sidebar-accent: #222c23;
+  --sidebar-accent-foreground: #f0f4f1;
+  --sidebar-border: #262f27;
+  --sidebar-ring: #6e9367;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes hero-scale-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes nav-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes watermark-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 48px, 0);
+    transition:
+      opacity 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 1.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal.reveal-fade {
+    transform: none;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .stagger-group .reveal-child {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+    transition:
+      opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .stagger-group.is-visible .reveal-child {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .animate-hero-in {
+    animation: hero-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-hero-scale-in {
+    animation: hero-scale-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-nav-in {
+    animation: nav-slide-down 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .animate-watermark-in {
+    animation: watermark-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .stagger-group .reveal-child {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .animate-hero-in,
+  .animate-hero-scale-in,
+  .animate-nav-in,
+  .animate-watermark-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
