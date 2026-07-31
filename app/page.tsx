@@ -7,7 +7,7 @@ import { Contact } from "@/components/portfolio/contact"
 
 export default function Page() {
   return (
-    <main id="top" className="min-h-screen bg-background text-foreground">
+    <main id="top" className="min-h-screen overflow-x-clip bg-background text-foreground">
       <Navbar />
       <Hero />
       <Projects />

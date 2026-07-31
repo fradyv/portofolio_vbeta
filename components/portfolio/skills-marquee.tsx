@@ -69,8 +69,8 @@ function SkillCard({ item }: { item: TechStackItem }) {
 
 function LogoMarquee() {
   return (
-    <div className="relative w-full select-none pb-6 md:pb-8">
-      <div className="relative overflow-hidden px-2 pb-6 pt-[4.25rem] md:px-0 md:pb-4 md:pt-[4.5rem]">
+    <div className="relative w-full max-w-full select-none pb-6 md:pb-8">
+      <div className="relative max-w-full overflow-hidden px-2 pb-6 pt-[4.25rem] md:px-0 md:pb-4 md:pt-[4.5rem]">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent sm:w-16 md:w-32"
@@ -117,7 +117,7 @@ export function SkillsMarquee() {
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={200} fade>
-          <div className="mt-10 -mx-4 md:mx-0">
+          <div className="mt-10 max-w-full overflow-hidden">
             <LogoMarquee />
           </div>
         </AnimateOnScroll>

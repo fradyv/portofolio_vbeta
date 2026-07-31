@@ -61,15 +61,15 @@ const SOCIAL_LINKS = [
 
 export function Contact() {
   return (
-    <footer className="border-t border-border bg-background">
+    <footer id="contact" className="border-t border-border bg-background">
       <AnimateStagger
         className="mx-auto grid max-w-7xl grid-cols-1 items-end gap-12 px-4 py-16 md:px-8 lg:grid-cols-2 lg:gap-16 lg:py-20"
         baseDelay={350}
         stagger={350}
       >
         {/* Column 1 — Get in Touch */}
-        <div>
-          <h2 className="font-display text-5xl font-extrabold uppercase leading-[0.9] tracking-tight text-foreground text-balance sm:text-6xl md:text-7xl lg:text-8xl">
+        <div className="min-w-0">
+          <h2 className="font-display text-[clamp(2rem,9vw,3rem)] font-extrabold uppercase leading-[0.95] tracking-tight text-foreground text-balance sm:text-6xl md:text-7xl lg:text-8xl">
             Let&apos;s Work
             <br />
             Together
@@ -88,7 +88,7 @@ export function Contact() {
         </div>
 
         {/* Column 2 — Connect with Us */}
-        <div className="lg:text-right">
+        <div className="min-w-0 lg:text-right">
           <p className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Connect with Me
           </p>

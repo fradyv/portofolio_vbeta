@@ -128,9 +128,11 @@
   }
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
   }
 }
 
@@ -348,14 +350,10 @@
   }
 
   .marquee-track {
-    animation: none;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
+    animation-duration: 60s;
   }
 
   .animate-marquee {
-    animation: none;
-    transform: none;
+    animation-duration: 60s;
   }
 }

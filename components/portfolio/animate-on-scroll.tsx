@@ -11,18 +11,42 @@ function useInView() {
     const el = ref.current
     if (!el) return
 
+    let done = false
+
+    const reveal = () => {
+      if (done) return
+      done = true
+      requestAnimationFrame(() => setVisible(true))
+    }
+
+    const isInView = () => {
+      const rect = el.getBoundingClientRect()
+      return rect.top < window.innerHeight * 0.95 && rect.bottom > 0
+    }
+
+    if (isInView()) {
+      reveal()
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          requestAnimationFrame(() => setVisible(true))
+          reveal()
           observer.disconnect()
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px 20% 0px" }
+      { threshold: 0, rootMargin: "0px 0px 80px 0px" }
     )
 
     observer.observe(el)
-    return () => observer.disconnect()
+
+    const fallback = window.setTimeout(reveal, 1200)
+
+    return () => {
+      observer.disconnect()
+      window.clearTimeout(fallback)
+    }
   }, [])
 
   return { ref, visible }
