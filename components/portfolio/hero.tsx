@@ -20,17 +20,24 @@ const EXPLORING = [
 
 export function Hero() {
   return (
-    <section id="about" className="relative overflow-hidden px-4 pb-16 pt-12 md:px-8 md:pb-24 md:pt-16">
-      {/* Background watermark */}
+    <section
+      id="about"
+      className="hero-section relative overflow-hidden px-4 pb-16 pt-12 md:px-8 md:pb-24 md:pt-16"
+    >
+      {/* Background layers */}
+      <div aria-hidden="true" className="hero-radial-glow pointer-events-none absolute inset-0 z-0" />
+      <div aria-hidden="true" className="hero-dot-grid pointer-events-none absolute inset-0 z-0" />
+
+      {/* Watermark — upper-center behind portrait */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-24 z-0 flex justify-center px-4 md:top-20"
+        className="pointer-events-none absolute inset-x-0 top-[28%] z-0 flex -translate-y-1/2 justify-center px-4 md:top-[30%]"
       >
         <span
-          className="animate-watermark-in select-none origin-center scale-[0.92_1.9] bg-gradient-to-b from-primary via-primary/50 to-primary/15 bg-clip-text text-center font-display text-[clamp(1.75rem,5.5vw,4rem)] font-extrabold uppercase leading-none tracking-[-0.03em] text-transparent md:scale-[1_2.1] md:text-[clamp(2rem,6.5vw,4.75rem)]"
+          className="watermark-outline animate-watermark-in select-none text-center font-display text-[clamp(2.75rem,12vw,9.5rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.04em]"
           style={{ animationDelay: "200ms" }}
         >
-          portofolio
+          FRADYVA
         </span>
       </div>
 
@@ -83,6 +90,10 @@ export function Hero() {
           <div className="relative flex items-end justify-center">
             <div
               aria-hidden="true"
+              className="absolute left-1/2 top-[20%] h-32 w-[90%] -translate-x-1/2 rounded-[100%] bg-primary/25 blur-3xl md:top-[18%] md:h-40"
+            />
+            <div
+              aria-hidden="true"
               className="absolute bottom-8 left-1/2 h-12 w-[80%] -translate-x-1/2 rounded-[100%] bg-primary/30 blur-2xl md:bottom-12 md:h-16 md:w-[85%]"
             />
             <div
@@ -92,7 +103,7 @@ export function Hero() {
             <img
               src="/images/profile.png"
               alt="Portrait of Fastu Nadya"
-              className="relative z-10 h-[520px] w-auto max-w-full object-cover object-top drop-shadow-[0_28px_40px_rgba(110,147,103,0.35)] [mask-image:linear-gradient(to_bottom,black_72%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_72%,transparent_100%)] md:h-[680px]"
+              className="relative z-10 h-[520px] w-auto max-w-full object-cover object-top drop-shadow-[0_28px_40px_rgba(107,142,159,0.35)] [mask-image:linear-gradient(to_bottom,black_72%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_72%,transparent_100%)] md:h-[680px]"
               style={{ aspectRatio: "3 / 4", display: "block" }}
             />
           </div>
@@ -111,7 +122,7 @@ export function Hero() {
             return (
               <div
                 key={item.header}
-                className="animate-hero-in flex items-start gap-4 rounded-2xl border border-border bg-card p-4 transition-colors hover:border-primary"
+                className="animate-hero-in flex items-start gap-4 rounded-2xl border border-border bg-card p-4 transition-colors hover:border-primary/40"
                 style={{ animationDelay: `${550 + index * 100}ms` }}
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">

@@ -80,7 +80,7 @@ export function Contact() {
           </p>
           <a
             href="mailto:fastunadya@gmail.com"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90 md:mt-8"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover md:mt-8"
           >
             Available for Projects
             <ArrowUpRight size={16} />

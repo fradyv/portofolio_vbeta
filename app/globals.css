@@ -33,6 +33,7 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
@@ -50,73 +51,75 @@
 
 :root {
   color-scheme: light;
-  --background: #f4f6f3;
-  --foreground: #1a2019;
+  --background: #f5f7f9;
+  --foreground: #1a1f24;
   --card: #ffffff;
-  --card-foreground: #1a2019;
+  --card-foreground: #1a1f24;
   --popover: #ffffff;
-  --popover-foreground: #1a2019;
-  --primary: #3a5035;
-  --primary-foreground: #f4f6f3;
-  --secondary: #e6ebe2;
-  --secondary-foreground: #1a2019;
-  --muted: #eaeee6;
-  --muted-foreground: #5a6558;
-  --accent: #dfe7d9;
-  --accent-foreground: #2b3a27;
+  --popover-foreground: #1a1f24;
+  --primary: #6b8e9f;
+  --primary-hover: #587b8c;
+  --primary-foreground: #ffffff;
+  --secondary: #e8eef2;
+  --secondary-foreground: #1a1f24;
+  --muted: #eef2f5;
+  --muted-foreground: #5a6670;
+  --accent: #dfe8ec;
+  --accent-foreground: #2a3a44;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: #d6ddce;
-  --input: #d6ddce;
-  --ring: #3a5035;
-  --chart-1: #3a5035;
-  --chart-2: #5b7b55;
-  --chart-3: #6e9367;
-  --chart-4: #8fae87;
-  --chart-5: #b3c7ac;
+  --border: #d4dde3;
+  --input: #d4dde3;
+  --ring: #6b8e9f;
+  --chart-1: #6b8e9f;
+  --chart-2: #587b8c;
+  --chart-3: #8aa8b8;
+  --chart-4: #a8bcc8;
+  --chart-5: #c8d8e0;
   --radius: 0.625rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #1a2019;
-  --sidebar-primary: #3a5035;
-  --sidebar-primary-foreground: #f4f6f3;
-  --sidebar-accent: #dfe7d9;
-  --sidebar-accent-foreground: #2b3a27;
-  --sidebar-border: #d6ddce;
-  --sidebar-ring: #3a5035;
+  --sidebar-foreground: #1a1f24;
+  --sidebar-primary: #6b8e9f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #dfe8ec;
+  --sidebar-accent-foreground: #2a3a44;
+  --sidebar-border: #d4dde3;
+  --sidebar-ring: #6b8e9f;
 }
 
 .dark {
   color-scheme: dark;
   --background: #0e110f;
-  --foreground: #f0f4f1;
-  --card: #161c18;
-  --card-foreground: #f0f4f1;
-  --popover: #161c18;
-  --popover-foreground: #f0f4f1;
-  --primary: #6e9367;
-  --primary-foreground: #0e110f;
-  --secondary: #1c231d;
-  --secondary-foreground: #f0f4f1;
-  --muted: #1c231d;
-  --muted-foreground: #a3b19b;
-  --accent: #222c23;
-  --accent-foreground: #f0f4f1;
+  --foreground: #f0f4f7;
+  --card: #161a1d;
+  --card-foreground: #f0f4f7;
+  --popover: #161a1d;
+  --popover-foreground: #f0f4f7;
+  --primary: #6b8e9f;
+  --primary-hover: #587b8c;
+  --primary-foreground: #ffffff;
+  --secondary: #1a1f23;
+  --secondary-foreground: #f0f4f7;
+  --muted: #1a1f23;
+  --muted-foreground: #9aa8b0;
+  --accent: #1e2529;
+  --accent-foreground: #f0f4f7;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #262f27;
-  --input: #2b352c;
-  --ring: #6e9367;
-  --chart-1: #6e9367;
-  --chart-2: #5b7b55;
-  --chart-3: #8fae87;
-  --chart-4: #4a6444;
-  --chart-5: #b3c7ac;
-  --sidebar: #161c18;
-  --sidebar-foreground: #f0f4f1;
-  --sidebar-primary: #6e9367;
-  --sidebar-primary-foreground: #0e110f;
-  --sidebar-accent: #222c23;
-  --sidebar-accent-foreground: #f0f4f1;
-  --sidebar-border: #262f27;
-  --sidebar-ring: #6e9367;
+  --border: #2a3238;
+  --input: #2a3238;
+  --ring: #6b8e9f;
+  --chart-1: #6b8e9f;
+  --chart-2: #587b8c;
+  --chart-3: #8aa8b8;
+  --chart-4: #4a6674;
+  --chart-5: #c8d8e0;
+  --sidebar: #161a1d;
+  --sidebar-foreground: #f0f4f7;
+  --sidebar-primary: #6b8e9f;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e2529;
+  --sidebar-accent-foreground: #f0f4f7;
+  --sidebar-border: #2a3238;
+  --sidebar-ring: #6b8e9f;
 }
 
 @layer base {
@@ -175,6 +178,33 @@
   }
 }
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @layer utilities {
   .reveal {
     opacity: 0;
@@ -224,6 +254,76 @@
     animation: watermark-in 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     opacity: 0;
   }
+
+  .watermark-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px color-mix(in srgb, var(--foreground) 22%, transparent);
+  }
+
+  .dark .watermark-outline {
+    -webkit-text-stroke: 1.5px color-mix(in srgb, var(--foreground) 28%, transparent);
+  }
+
+  .hero-radial-glow {
+    background:
+      radial-gradient(
+        ellipse 90% 70% at 50% 28%,
+        color-mix(in srgb, var(--primary) 14%, transparent),
+        transparent 68%
+      ),
+      radial-gradient(
+        ellipse 60% 45% at 50% 85%,
+        color-mix(in srgb, var(--primary) 8%, transparent),
+        transparent 70%
+      );
+  }
+
+  .hero-dot-grid {
+    background-image: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--foreground) 7%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+    mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, black 20%, transparent 72%);
+    opacity: 0.55;
+  }
+
+  .dark .hero-dot-grid {
+    opacity: 0.45;
+  }
+
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+    will-change: transform;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  .marquee-track {
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .marquee-track-left {
+    animation-name: marquee-left;
+  }
+
+  .marquee-track-right {
+    animation-name: marquee-right;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .marquee-row:hover .marquee-track,
+    .marquee-row:hover .animate-marquee {
+      animation-play-state: paused;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -244,6 +344,18 @@
   .animate-watermark-in {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .animate-marquee {
+    animation: none;
     transform: none;
   }
 }

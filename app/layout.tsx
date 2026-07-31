@@ -26,12 +26,16 @@ export const metadata: Metadata = {
   description:
     'Portfolio of Fastu Nadya Progresiva, an Informatics student at Amikom University of Yogyakarta focused on web development, cybersecurity, and creative technology.',
   generator: 'v0.app',
+  icons: {
+    icon: '/images/favicon.png',
+    apple: '/images/favicon.png',
+  },
 }
 
 export const viewport: Viewport = {
   colorScheme: 'dark light',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f4f6f3' },
+    { media: '(prefers-color-scheme: light)', color: '#f5f7f9' },
     { media: '(prefers-color-scheme: dark)', color: '#0e110f' },
   ],
 }

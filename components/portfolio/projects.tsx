@@ -53,7 +53,7 @@ export function Projects() {
           {PROJECTS.map((project) => (
             <article
               key={project.number}
-              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-primary"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-primary/40"
             >
               <div className="relative aspect-[16/11] overflow-hidden">
                 {"video" in project && project.video ? (
